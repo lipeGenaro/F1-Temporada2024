@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kameron:wght@400..700&family=Luckiest+Guy&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kameron:wght@400..700&family=Luckiest+Guy&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    --segunda-fonte: 'Exo 2', sans-serif;
+}
+
+body{
+    background-color:#1A1B26;
+    
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #dd0000;
+    margin-bottom: 40px;
+    background-color: #1A1B26;
+}
+.nav img {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 30px;
+}
+
+.nav li {
+    margin-left: 30px;
+    list-style: none;
+    display: inline;
+    font-size: 18px;
+}
+
+.nav li a{
+    text-decoration: none;
+    padding: 30px;
+    color: white;
+}
+
+.nav li a:hover {
+    color: #e10600;
+}
+
+.content h1{
+    color: white;
+    margin-left: 70px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.corridas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+    max-width: 1450px; 
+    margin: 0 auto;
+    padding: 0 10px; 
+}
+
+.corridas > div {
+    font-family: var( --segunda-fonte);
+    background-color: #000000;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empurrar a data para o final */
+    min-height: 300px; /* Altura mínima para melhor visualização */
+}
+
+
+.corridas p.round {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e10600;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.corridas .country-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza a bandeira e o país */
+    margin-bottom: 10px;
+}
+
+.corridas img.bandeira {
+    width: 40px; /* Tamanho da bandeira */
+    height: 35px;
+    margin-right: 20px; /* Espaçamento entre a bandeira e o nome do país */
+    border-radius: 50%; /* Para deixar a bandeira redonda, se desejar */
+    border: none;
+}
+
+.corridas h2.pais {
+    font-size: 1.5em;
+    color: #f0f0f0;
+    margin: 0; /* Remover margens conflitantes */
+}
+
+.corridas .circuit-name {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.corridas .pista-container {
+    flex-grow: 1; /* Permite que o container da pista ocupe o espaço disponível */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.corridas img.pista {
+    max-width: 80%;
+    height: auto;
+    
+}
+
+.corridas .winner {
+    font-size: 0.8em;
+    color: #ccc;
+    line-height: 1.2;
+    text-align: right;
+    margin-top: 10px; /* Espaçamento acima do vencedor */
+}
+
+.corridas .winner strong {
+    color: #e10600;
+}
+
+.corridas .data{
+    color: white;
+    text-align: left; /* Alinha a data à esquerda */
+    margin-top: 10px; /* Espaçamento acima da data */
+}
+
+@media (max-width: 768px) {
+    .corridas {
+        grid-template-columns: 1fr; /* Pistas uma em cima da outra em telas menores */
+        padding: 0 20px; /* Ajustar padding para telas menores */
+    }
+
+    .content h1 {
+        margin-left: 20px; /* Ajustar margem do título */
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column; /* Empilhar itens de navegação */
+        align-items: center;
+    }
+
+    .nav ul {
+        padding: 0;
+    }
+
+    .nav li {
+        margin: 10px 0;
+    }
+
+    .nav img {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .corridas > div {
+        min-height: 250px; /* Ajustar altura mínima para telas muito pequenas */
+    }
+
+    .corridas img.bandeira {
+        width: 30px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .corridas h2.pais {
+        font-size: 1.2em;
+    }
+
+    .content h1 {
+        font-size: 1.5em;
+    }
+}
+
